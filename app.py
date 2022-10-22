@@ -1,3 +1,6 @@
+from random import randint
+
+
 def roll_a_dice(roll_data):
     error_text = "data for roll cacluation are incorrect!"
     number_of_throwns = 1
@@ -46,9 +49,10 @@ def roll_a_dice(roll_data):
             return error_text
         dice_size = roll_data_splited[1]
 
-
-
-    return int(number_of_throwns) * int(dice_size) + int(additional_modifier)
+    result = 0
+    for roll_iter in range(number_of_throwns):
+        result += randint(1, 6)
+    return result + int(additional_modifier)
 
 
 print(roll_a_dice('D6'))
