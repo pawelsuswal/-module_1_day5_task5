@@ -50,8 +50,8 @@ def roll_a_dice(roll_data):
         dice_size = roll_data_splited[1]
 
     result = 0
-    for roll_iter in range(number_of_throwns):
-        result += randint(1, 6)
+    for roll_iter in range(int(number_of_throwns)):
+        result += randint(1, int(dice_size))
     return result + int(additional_modifier)
 
 
